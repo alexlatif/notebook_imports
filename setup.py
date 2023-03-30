@@ -1,12 +1,12 @@
 from setuptools import setup
 
-setup(name='notebook_imports',
+setup(name='notebook_imports_colab',
       version='0.2',
-      description='model version controller',
-      url='https://github.com/alexlatif/mvc.git',
+      description='notebook imports for ds collaboration',
+      url='https://github.com/alexlatif/notebook_imports',
       author='delnobolo',
       author_email='ale@watz.coach',
-      license='MIT',
+      license='unlicense',
       packages=['notebook_imports'],
       zip_safe=False
 )
