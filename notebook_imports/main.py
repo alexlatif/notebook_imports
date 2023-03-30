@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import os
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -9,6 +8,12 @@ def uninstall(package):
     subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", package])
 
 def init():
+    import os
+    import IPython
+    import sys
+    import datetime
+    import typing
+    
     tf_version = os.environ["TF_VERSION"]
     install("pandas")
     install("numpy")
@@ -25,13 +30,8 @@ def init():
     install("fsspec")
     install("gcsfs")
 
-    import IPython
-    import sys
-    import os
     import pandas as pd
     import numpy as np
-    import datetime
-    import typing
     from pydantic import BaseModel
 
     if "google.colab" not in sys.modules:
