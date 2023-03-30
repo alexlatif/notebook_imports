@@ -1,18 +1,27 @@
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+def uninstall(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", package])
+
 def init():
-    ! pip install pandas
-    ! pip install numpy
-    ! pip install pydantic
-    ! pip install IPython
-    ! pip install tensorflow-macos # TODO will have to change this
-    ! pip install tensorflow-cloud
-    ! pip install grpcio-status==1.48.2 
-    ! pip install --upgrade google-cloud-aiplatform google-cloud-storage google-cloud-bigquery pyarrow
-    ! pip install Pyarrow
-    ! pip uninstall -y mvc
-    ! pip install git+https://github.com/alexlatif/mvc.git
-    ! pip install db_dtypes
-    ! pip install fsspec
-    ! pip install gcsfs
+    install("pandas")
+    install("numpy")
+    install("pydantic")
+    install("IPython")
+    install("tensorflow-macos # TODO will have to change this")
+    install("tensorflow-cloud")
+    install("grpcio-status==1.48.2 ")
+    install("--upgrade google-cloud-aiplatform google-cloud-storage google-cloud-bigquery pyarrow")
+    install("Pyarrow")
+    uninstall("mvc")
+    install("git+https://github.com/alexlatif/mvc.git")
+    install("db_dtypes")
+    install("fsspec")
+    install("gcsfs")
 
     import os
     import IPython
@@ -66,7 +75,7 @@ def init():
             print("gdrive mounted!")
 
             config_file = "ml-wtz.json"
-            shared_dir = f"{UNIQUE_DRIVE_DIR}/{config_file}" # chang this as the top of file 
+            shared_dir = f"{os.environ["UNIQUE_DRIVE_DIR"]}/{config_file}" # chang this as the top of file 
             local_dir = f"drive/MyDrive/ml/ml_shared_config/{config_file}" # change this only if sharing config file
 
             if os.path.exists(shared_dir): 
