@@ -13,7 +13,7 @@ def init():
     import sys
     import datetime
     import typing
-    
+
     tf_version = os.environ["TF_VERSION"]
     install("pandas")
     install("numpy")
@@ -21,9 +21,12 @@ def init():
     install("IPython")
     install(tf_version) # TODO will have to change this
     install("tensorflow-cloud")
-    install("grpcio-status==1.48.2 ")
-    install("--upgrade google-cloud-aiplatform google-cloud-storage google-cloud-bigquery pyarrow")
-    install("Pyarrow")
+    install("grpcio-status==1.48.2")
+    install("google-cloud-aiplatform")
+    install("google-cloud-storage")
+    install("google-cloud-bigquery")
+    install("pyarrow")
+    # install("Pyarrow")
     uninstall("mvc")
     install("git+https://github.com/alexlatif/mvc.git")
     install("db_dtypes")
