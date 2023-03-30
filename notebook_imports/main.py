@@ -8,11 +8,12 @@ def uninstall(package):
     subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", package])
 
 def init():
+    tf_version = os.environ["TF_VERSION"]
     install("pandas")
     install("numpy")
     install("pydantic")
     install("IPython")
-    install("tensorflow-macos # TODO will have to change this")
+    install(tf_version) # TODO will have to change this
     install("tensorflow-cloud")
     install("grpcio-status==1.48.2 ")
     install("--upgrade google-cloud-aiplatform google-cloud-storage google-cloud-bigquery pyarrow")
