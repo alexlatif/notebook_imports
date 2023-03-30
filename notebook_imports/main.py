@@ -87,7 +87,7 @@ def init():
                 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = local_dir
 
             # ! pip install --upgrade google-cloud-aiplatform google-cloud-storage google-cloud-bigquery pyarrow $USER_FLAG -q
-            ! pip install tensorflow-hub $USER_FLAG -q
+            install("tensorflow-hub")# $USER_FLAG -q
 
             # TODO workbench specific
             # print("auth google user")
