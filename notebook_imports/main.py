@@ -75,7 +75,8 @@ def init():
             print("gdrive mounted!")
 
             config_file = "ml-wtz.json"
-            shared_dir = f"{os.environ["UNIQUE_DRIVE_DIR"]}/{config_file}" # chang this as the top of file 
+            drive_dir_usr = os.environ["UNIQUE_DRIVE_DIR"]
+            shared_dir = f"{drive_dir_usr}/{config_file}" # chang this as the top of file 
             local_dir = f"drive/MyDrive/ml/ml_shared_config/{config_file}" # change this only if sharing config file
 
             if os.path.exists(shared_dir): 
