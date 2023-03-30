@@ -33,9 +33,9 @@ def init():
     install("fsspec")
     install("gcsfs")
 
-    import pandas as pd
-    import numpy as np
-    from pydantic import BaseModel
+    # import pandas as pd
+    # import numpy as np
+    # from pydantic import BaseModel
 
     if "google.colab" not in sys.modules:
         sys.path.append(
@@ -111,11 +111,11 @@ def init():
     os.environ["REGION"] = "us-east1"
     os.environ["DEPLOY_COMPUTE"] = "n1-standard-2"
     os.environ["MODEL_PREDICT_CONTAINER_URI"]  = "us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-11:latest"
-    os.environ["SERVICES_CONFIGED"] = ",".join(["workout_decisions", "lstm_options"])
+    # os.environ["SERVICES_CONFIGED"] = ",".join(["workout_decisions", "lstm_options"])
 
-    from google.cloud import bigquery, storage
-    from google.cloud import aiplatform
-    import tensorflow as tf
-    import tensorflow_cloud as tfc
-    import mvc as model_version_controller
-    mvc = model_version_controller.ModelVersionController()
+    # from google.cloud import bigquery, storage
+    # from google.cloud import aiplatform
+    # import tensorflow as tf
+    # import tensorflow_cloud as tfc
+    # import mvc as model_version_controller
+    # mvc = model_version_controller.ModelVersionController()
