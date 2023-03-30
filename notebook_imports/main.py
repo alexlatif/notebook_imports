@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -24,7 +25,6 @@ def init():
     install("fsspec")
     install("gcsfs")
 
-    import os
     import IPython
     import sys
     import os
