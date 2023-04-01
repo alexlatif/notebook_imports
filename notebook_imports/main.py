@@ -97,7 +97,7 @@ def init():
             # print("auth google user")
             # google_auth.authenticate_user()
 
-    local_file_path = r'dev_utils/ml_wtz_gcp_config.json' # if config file is local
+    local_file_path = os.environ["LOCAL_GCP_KEY"] # if config file is local
 
     if os.path.exists(local_file_path):
         print("USING LOCAL CONFIG")
