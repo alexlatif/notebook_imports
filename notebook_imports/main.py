@@ -97,7 +97,9 @@ def init():
             # print("auth google user")
             # google_auth.authenticate_user()
 
-    local_file_path = os.environ["LOCAL_GCP_KEY"] # if config file is local
+    local_file_path = ""
+    if "LOCAL_GCP_KEY" in os.environ:
+        local_file_path = os.environ["LOCAL_GCP_KEY"] # if config file is local
 
     if os.path.exists(local_file_path):
         print("USING LOCAL CONFIG")
@@ -113,6 +115,7 @@ def init():
     os.environ["MODEL_PREDICT_CONTAINER_URI"]  = "us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-11:latest"
     # os.environ["SERVICES_CONFIGED"] = ",".join(["workout_decisions", "lstm_options"])
 
+    import simp_graphs as mh
     # from google.cloud import bigquery, storage
     # from google.cloud import aiplatform
     # import tensorflow as tf
