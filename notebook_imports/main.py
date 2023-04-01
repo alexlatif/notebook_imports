@@ -22,6 +22,7 @@ def init():
     install(tf_version) # TODO will have to change this
     install("tensorflow-cloud")
     install("torch")
+    install("matplotlib")
     install("grpcio-status==1.48.2")
     install("google-cloud-aiplatform")
     install("google-cloud-storage")
