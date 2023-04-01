@@ -115,7 +115,6 @@ def init():
     os.environ["MODEL_PREDICT_CONTAINER_URI"]  = "us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-11:latest"
     # os.environ["SERVICES_CONFIGED"] = ",".join(["workout_decisions", "lstm_options"])
 
-    import simp_graphs as mh
     # from google.cloud import bigquery, storage
     # from google.cloud import aiplatform
     # import tensorflow as tf
