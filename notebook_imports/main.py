@@ -13,13 +13,16 @@ def init():
     import sys
     import datetime
     import typing
+    import platform
 
-    tf_version = os.environ["TF_VERSION"]
     install("pandas")
     install("numpy")
     install("pydantic")
     install("IPython")
-    install(tf_version) # TODO will have to change this
+    if platform.system() == "Darwin":
+        install("tensorflow-macos")
+    else:
+        install("tensorflow")
     install("tensorflow-cloud")
     install("torch")
     install("matplotlib")
